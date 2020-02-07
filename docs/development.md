@@ -129,13 +129,13 @@ To stop your running containers, run:
 docker-compose stop
 ```
 
-If ever update the following files:
+If you ever update the following files:
 
 - `.dockerignore`
 - `docker-compose.yml`
 - `docker-dev.dockerfile`
 
-Then you'll want to stop and remove all containers, networks, volumes, and images created for your app with:
+then you'll want to stop and remove all containers, networks, volumes, and images created for your app with:
 
 ```bash
 docker-compose down --volumes --rmi all --remove-orphans
