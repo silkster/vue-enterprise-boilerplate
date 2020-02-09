@@ -19,8 +19,6 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@design';
-
 .loadingIcon {
   @extend %typography-xxlarge;
 

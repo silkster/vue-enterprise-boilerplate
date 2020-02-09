@@ -48,8 +48,6 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@design';
-
 .input {
   @extend %typography-small;
 

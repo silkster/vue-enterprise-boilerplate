@@ -167,10 +167,23 @@ background: url('~@assets/images/background.png');
 
 ### Design variables and tooling
 
-All our [variables](https://sass-lang.com/guide#topic-2), [placeholder classes](https://sass-lang.com/guide#topic-7), [mixins](https://sass-lang.com/guide#topic-6), and other design tooling are in the `src/design` folder. Each of these files define variables, prefixed with the name of the file, then combined in `src/design/index.scss`. This combined file is aliased as `@design` for convenience and can be imported into SCSS using:
+All our [variables](https://sass-lang.com/guide#topic-2), [placeholder classes](https://sass-lang.com/guide#topic-7), [mixins](https://sass-lang.com/guide#topic-6), and other design tooling are in the `src/design` folder. Each of these files define variables, prefixed with the name of the file, then combined in `src/design/index.scss`. This combined file is aliased as `@design` for convenience and is automatically loaded by vue-loader, which is configured in vue.config.js under the `css` option like so:
 
 ```scss
-@import '@design';
+module.exports = {
+  // ...
+  css: {
+    // Enable CSS source maps.
+    sourceMap: true,
+    loaderOptions: {
+      sass: {
+        // Automatically prepend design variables and utilities from src/design for every component.
+        prependData: `@import "@design";`
+      }
+    }
+  },
+  // ...
+};
 ```
 
 This makes all our design variables available in your component or SCSS file.

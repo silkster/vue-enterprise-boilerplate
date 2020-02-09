@@ -26,6 +26,5 @@ export default {
 
 if (useStyles) { %>
 <style lang="scss" module>
-@import '@design';
 </style>
 <% } %>

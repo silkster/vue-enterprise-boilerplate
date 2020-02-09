@@ -45,8 +45,6 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@design';
-
 .container {
   padding: 0;
   margin: 0 0 $size-grid-padding;
